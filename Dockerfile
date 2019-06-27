@@ -38,28 +38,14 @@ RUN yum install -y \
     vim-enhanced
 
 # ===============================================================================================================
-# Vimrc
+# Dotfile
 # ===============================================================================================================
-COPY .vimrc /root
-COPY .gvimrc /root
-RUN echo "alias vi='vim'" >> /root/.bashrc
+COPY .bash_profile /root/dotfiles/
+COPY .bashrc /root/dotfiles/
+COPY .vimrc /root/dotfiles/
+COPY .gvimrc /root/dotfiles/
 
-# ===============================================================================================================
-# python setting
-# ===============================================================================================================
-
-RUN yum install -y https://centos7.iuscommunity.org/ius-release.rpm
-RUN yum install -y python36u python36u-devel python36u-libs
-RUN ln -s /usr/bin/python3.6 /usr/bin/python3
-
-# pip
-RUN yum install -y python36u-pip
-RUN ln -s /usr/bin/pip3.6 /usr/bin/pip3
-
-RUN pip3 install virtualenv
-RUN pip3 install setuptools
-RUN pip3 install django
-RUN pip3 install pipenv
-
-RUN export LC_ALL=en_US.UTF-8
-
+RUN ln -sf /root/dotfiles/.bash_profile /root/.bash_profile && \
+    ln -sf /root/dotfiles/.bashrc /root/.bashrc && \
+    ln -sf /root/dotfiles/.vimrc /root/.vimrc && \
+    ln -sf /root/dotfiles/.gvimrc /root/.gvimrc
