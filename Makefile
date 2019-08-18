@@ -3,5 +3,5 @@ build:
 	docker build -t raita/centos .
 .PHONY: run
 run:
-	docker run -it --rm raita/centos /bin/bash
+	docker run -it --rm raita/centos
 	

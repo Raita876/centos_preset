@@ -49,3 +49,5 @@ RUN ln -sf /root/dotfiles/.bash_profile /root/.bash_profile && \
     ln -sf /root/dotfiles/.bashrc /root/.bashrc && \
     ln -sf /root/dotfiles/.vimrc /root/.vimrc && \
     ln -sf /root/dotfiles/.gvimrc /root/.gvimrc
+
+CMD [ "/bin/bash" ]
