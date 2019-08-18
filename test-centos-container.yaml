@@ -1,0 +1,41 @@
+schemaVersion: "2.0.0"
+
+commandTests:
+  - name: "OS version is centos"
+    command: "cat"
+    args: ["/etc/redhat-release"]
+    expectedOutput: ["CentOS Linux release"]
+
+fileExistenceTests:
+  - name: "symbolic link .bash_profile"
+    path: "/root/.bash_profile"
+    shouldExist: true
+    permissions: "Lrwxrwxrwx"
+  - name: "symbolic link .bashrc"
+    path: "/root/.bashrc"
+    shouldExist: true
+    permissions: "Lrwxrwxrwx"
+  - name: "symbolic link .gvimrc"
+    path: "/root/.gvimrc"
+    shouldExist: true
+    permissions: "Lrwxrwxrwx"
+  - name: "symbolic link .vimrc"
+    path: "/root/.vimrc"
+    shouldExist: true
+    permissions: "Lrwxrwxrwx"
+  - name: "file exist .bash_profile"
+    path: "/root/dotfiles/.bash_profile"
+    shouldExist: true
+    permissions: "-rw-r--r--"
+  - name: "file exist .bashrc"
+    path: "/root/dotfiles/.bashrc"
+    shouldExist: true
+    permissions: "-rw-r--r--"
+  - name: "file exist .gvimrc"
+    path: "/root/dotfiles/.gvimrc"
+    shouldExist: true
+    permissions: "-rw-r--r--"
+  - name: "file exist .vimrc"
+    path: "/root/dotfiles/.vimrc"
+    shouldExist: true
+    permissions: "-rw-r--r--"
