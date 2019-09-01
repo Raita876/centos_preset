@@ -14,4 +14,4 @@ alias vi='vim'
 alias ls='ls -FG'
 
 # ターミナルの左側設定
-PS1="\u \W \$ "
+PS1="[\u@\h \W]\$ "
