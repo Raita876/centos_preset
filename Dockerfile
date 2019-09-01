@@ -36,10 +36,10 @@ RUN rpm --import http://mirror.centos.org/centos/RPM-GPG-KEY-CentOS-7 && \
 # ===============================================================================================================
 # Dotfile
 # ===============================================================================================================
-COPY .bash_profile /root/dotfiles/
-COPY .bashrc /root/dotfiles/
-COPY .vimrc /root/dotfiles/
-COPY .gvimrc /root/dotfiles/
+COPY dotfiles/.bash_profile /root/dotfiles/
+COPY dotfiles/.bashrc /root/dotfiles/
+COPY dotfiles/.vimrc /root/dotfiles/
+COPY dotfiles/.gvimrc /root/dotfiles/
 
 RUN ln -sf /root/dotfiles/.bash_profile /root/.bash_profile && \
     ln -sf /root/dotfiles/.bashrc /root/.bashrc && \
