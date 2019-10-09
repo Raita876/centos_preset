@@ -32,7 +32,9 @@ RUN rpm --import http://mirror.centos.org/centos/RPM-GPG-KEY-CentOS-7 && \
     git \
     mercurial \
     vim-enhanced \
-    sysstat
+    sysstat \
+    epel-release && \
+    yum install -y stress
 
 # ===============================================================================================================
 # Dotfile
