@@ -31,7 +31,8 @@ RUN rpm --import http://mirror.centos.org/centos/RPM-GPG-KEY-CentOS-7 && \
     tree \
     git \
     mercurial \
-    vim-enhanced
+    vim-enhanced \
+    sysstat
 
 # ===============================================================================================================
 # Dotfile
